@@ -7,6 +7,11 @@
     --background: #e2e8f0;
 }
 
+body {
+    box-sizing: border-box;
+    font-size: calc(0.625rem + 0.4vw);
+}
+
 p, h3 {
     margin:0;
 }
@@ -16,17 +21,33 @@ p, h3 {
     /*grid-template-areas: 
     'side header       header       header      '
     'side main-content main-content main-content';*/
-    grid-template-columns: 1fr 3fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto 1fr;
 }
 
 .header {
     /*grid-area: header;*/
-    grid-column: 2;
+    grid-column: 2 / span 1;
+    grid-row: 1 / 1;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 1fr;
+}
+
+.searchBar {
+    grid-column: 1;
+    grid-row: 1;
+
+    display:flex;
+    align-items: center;
+}
+
+.userCorner {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
 }
 
 .userCorner img {
@@ -36,8 +57,8 @@ p, h3 {
 }
 
 .userControl {
-    display:grid;
-    grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+    display: flex;
+    align-items: center;
 }
 
 .userControl img {
@@ -54,20 +75,28 @@ button {
 .adminButtons {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
 }
 
 .side {
     /*grid-area: side;*/
     grid-column: 1;
     grid-row: 1 / 3;
+
+    display:grid;
+    grid-template-rows: auto auto 1fr;
     color: var(--secondary-color);
     background-color: var(--primary);
+    padding:50px;
+}
+
+.dashboardDiv {
+    display:flex;
+    justify-content: center;
 }
 
 .side ul {
     list-style: none;
-    display: grid;
 }
 
 .main-content {
@@ -76,9 +105,11 @@ button {
     grid-row: 2;
 
     display:grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-columns: 3fr auto;
     grid-template-rows: 1fr 1fr;
+    gap:15px;   
     background-color: var(--background);
+    padding:50px;
 }
 
 .projects {
@@ -91,10 +122,40 @@ button {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+.card {
+    margin:20px;
+    background-color: var(--secondary-color);
+    border: 1px solid transparent;
+    border-radius: 6px;;
+}
+
+.card img {
+    width: 200px;
+    height:auto;
+}
+
 .announcements {
     grid-column: 2;
+    padding:50px
+}
+
+.announcementItem {
+    
 }
 
 .trending {
     grid-column: 2;
+    padding:20px
+}
+
+.trendingItem {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.trendingItem img {
+    height: 55px;
+    width: auto;
+    border-radius: 50%;
 }
