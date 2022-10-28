@@ -7,6 +7,10 @@
     --background: #e2e8f0;
 }
 
+p, h3 {
+    margin:0;
+}
+
 .grid-container {
     display: grid;
     /*grid-template-areas: 
@@ -21,18 +25,36 @@
     grid-column: 2;
 
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr 1fr;
 }
 
-.firstHeader {
-    display:grid;
-    grid-template-columns: 3fr 1fr;
+.userCorner img {
+    height: 55px;
+    width: auto;
+    border-radius: 50%;
 }
 
 .userControl {
     display:grid;
     grid-template-columns: 1fr 3fr 1fr 1fr 1fr;
+}
+
+.userControl img {
+    height: 90px;
+    width: auto;
+    border-radius: 50%;
+}
+
+button {
+    padding: 6px 18px;
+    border-radius: 16px;
+}
+
+.adminButtons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .side {
