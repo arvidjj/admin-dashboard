@@ -9,22 +9,27 @@
     <link rel="stylesheet" href="resources/normalize.css">
     <link rel="stylesheet" href="style.css">
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="app.js" defer></script>
 </head>
 
 <body>
     <div class="grid-container">
-        <div class="header">
+        <div class="header shadow1">
             <div class="searchBar">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined filledIcon">
                     search
-                    </span>
+                </span>
                 <input type="text" class="searchInput">
             </div>
             <div class="userCorner">
+                <button id="themeButton" onclick="toggleTheme()"><span class="material-symbols-outlined">
+                    dark_mode
+                    </span></button>
                 <span class="material-symbols-outlined">
                     notifications
-                    </span>
+                </span>
                 <img src="img/avatar.jpeg" alt="User">
                 <p>Angel Ojeda</p>
             </div>
@@ -119,22 +124,22 @@
         <div class="main-content">
 
             <div class="projects">
-                <p>Your Projects</p>
+                <h2>Your Projects</h2>
                 <div class="cards-container">
                     <div class="card">
                         <h3>Super Cool Project</h3>
                         <img src="img/avatar.jpeg" alt="Project">
                         <p>Lorem ipstum asujduasjdusa</p>
-                        <div class="projectbuttons">
-                            <buttons><span class="material-symbols-outlined">
-                                bookmark_add
-                                </span></buttons>
-                            <buttons><span class="material-symbols-outlined">
-                                visibility
-                                </span></buttons>
-                            <buttons><span class="material-symbols-outlined">
-                                share
-                                </span></buttons>
+                        <div class="projectButtons">
+                            <button><span class="material-symbols-outlined unFilledIcon">
+                                    bookmark_add
+                                </span></button>
+                            <button><span class="material-symbols-outlined unFilledIcon">
+                                    visibility
+                                </span></button>
+                            <button><span class="material-symbols-outlined unFilledIcon">
+                                    share
+                                </span></button>
                         </div>
                     </div>
                     <div class="card">
@@ -191,27 +196,29 @@
             </div>
 
             <div class="announcements">
-                <p>Announcements</p>
-                <div class="announcementsContainer">
+                <h2>Announcements</h2>
+                <div class="announcementsContainer shadow1">
                     <div class="announcementItem">
-                        <p>Maintenance</p>
-                        <p>lorem ipsm</p>
+                        <h4>Maintenance</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                     <hr>
                     <div class="announcementItem">
-                        <p>Maintenance</p>
-                        <p>lorem ipsm</p>
+                        <h4>Maintenance</h4>
+                        <p>Praesent enim metus, laoreet ac
+                            varius nec, finibus in lacus. Nunc purus magna.</p>
                     </div>
                     <hr>
                     <div class="announcementItem">
-                        <p>Maintenance</p>
-                        <p>lorem ipsm</p>
+                        <h4>Maintenance</h4>
+                        <p>Feugiat ac neque a, pharetra hendrerit
+                            turpis.</p>
                     </div>
                 </div>
             </div>
             <div class="trending">
-                <p>Trending</p>
-                <div class="trendingContainer">
+                <h2>Trending</h2>
+                <div class="trendingContainer shadow1">
                     <div class="trendingItem">
                         <img src="img/avatar.jpeg" alt="trending1">
                         <span>

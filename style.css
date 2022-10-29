@@ -1,6 +1,7 @@
 :root,
 :root.light {
     --primary: #2563eb;
+    --light-primary: #517fe2;
     --secondary: #eab308;
 
     --main-color: black;
@@ -8,17 +9,37 @@
     --background: #e2e8f0;
 
     --mid-padding: 1.5rem;
+    --more-padding: 1.7rem;
 
     --grid-border: 1px solid black;
+}
+:root.dark {
+    --primary: black;
+    --secondary: #6d63c9;
+
+    --main-color: white;
+    --secondary-color: black;
+    --background: #24252f;
+
+    --mid-padding: 1.5rem;
+    --more-padding: 1.7rem;
+
+    --grid-border: 1px solid white;
+}
+#themeButton {
+    background: none;
+    border: none;
 }
 
 body {
     box-sizing: border-box;
     font-family: 'Roboto', arial;
+    color: var(--main-color);
+    background-color: var(--secondary-color);
     /*font-size: calc(0.625rem + 0.4vw);*/
 }
 
-p, h3 {
+p, h3, h2, h4 {
     margin:0;
 }
 
@@ -51,10 +72,13 @@ a {
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr auto;
     padding: 0.5rem 1.5rem;
+
+    font-weight: bold;
+    z-index: 10;
 }
 
 .header > div {
-    border: var(--grid-border);
+   /* border: var(--grid-border);*/
 }
 
 .searchBar {
@@ -78,6 +102,7 @@ a {
 
     display: flex;
     align-items: center;
+    gap:5px;
 }
 
 .userCorner img {
@@ -104,7 +129,10 @@ a {
     border-radius: 16px;
     border: 1px solid transparent;
     background-color: var(--primary);
-    color: var(--secondary-color);
+    color: white;
+}
+.button:hover {
+    background-color: var(--light-primary);
 }
 
 .adminButtons {
@@ -121,12 +149,15 @@ a {
 
     display:grid;
     grid-template-rows: auto auto 1fr;
-    color: var(--secondary-color);
+    color: white;
     background-color: var(--primary);
     padding:20px;
 }
 .side > div, ul {
-    border: var(--grid-border);
+    /*border: var(--grid-border);*/
+}
+.side span {
+    font-variation-settings: 'FILL' 1;
 }
 
 .dashboardDiv {
@@ -142,6 +173,9 @@ a {
     list-style: none;
     padding: 0;
 }
+.side ul li {
+    text-align: start;
+}
 .side ul li>a {
     display:flex;
     align-items: center;
@@ -150,6 +184,7 @@ a {
     gap:1.5rem;
     font-size: 1.5rem;
 }
+
 .side ul li>a:hover {
     text-decoration: underline;
 }
@@ -165,6 +200,11 @@ a {
     gap:15px;   
     background-color: var(--background);
     padding:50px;
+    
+}
+
+.main-content h2 {
+    margin-bottom: 10px;
 }
 
 .projects {
@@ -174,22 +214,42 @@ a {
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:20px;
 }
 
 .card {
-    margin:20px;
     background-color: var(--secondary-color);
     border: 1px solid transparent;
     border-radius: 6px;;
 
     border-left: 10px solid var(--secondary);
     padding: var(--mid-padding);
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+    z-index: 10;
+    transition: 0.5s;
+}
+
+.card:hover {
+    transform: scale(1.04);
 }
 
 .card img {
     width: 100%;
     height:auto;
+}
+
+.projectButtons {
+    align-self: flex-end;
+}
+.projectButtons>button {
+    background: none;
+    border: none;
+}
+.projectButtons>button:hover {
+    text-decoration: underline;
 }
 
 .announcements {
@@ -199,8 +259,9 @@ a {
 
 .announcementsContainer {
     background-color: var(--secondary-color);
-    padding: var(--mid-padding);
+    padding: var(--more-padding);
     border-radius: 16px;
+    max-width: 200px; 
 }
 
 .announcementItem {
@@ -209,13 +270,16 @@ a {
 
 .trending {
     grid-column: 2;
-    padding:20px
+    padding:20px;
+    
+    justify-self: center;
 }
 
 .trendingContainer {
     background-color: var(--secondary-color);
     padding: var(--mid-padding);
     border-radius: 16px;
+    max-width: 200px; 
 }
 
 .trendingItem {
@@ -228,4 +292,48 @@ a {
     height: 55px;
     width: auto;
     border-radius: 50%;
+}
+
+.unFilledIcon {
+    font-variation-settings: 'FILL' 0;
+}
+
+.filledIcon {
+    font-variation-settings: 'FILL' 1;
+}
+
+.shadow1 {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.cards-container > .card {
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+@media (max-width: 900px) {
+    .main-content {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto auto;
+    }
+    .projects{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .announcements {
+        grid-row: 2;
+        grid-column: 1;
+    }
+    .trending {
+        grid-row: 3;
+        grid-column: 1;
+    }
+    .side {
+
+    }
+    .side > ul {
+        display:none;
+    }    
+    .dashboardDiv p {
+        display:none;
+    }
 }
