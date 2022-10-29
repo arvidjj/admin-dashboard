@@ -7,6 +7,7 @@
     --main-color: black;
     --secondary-color: white;
     --background: #e2e8f0;
+    --light-font: rgb(63, 63, 63);
 
     --mid-padding: 1.5rem;
     --more-padding: 1.7rem;
@@ -20,6 +21,7 @@
     --main-color: white;
     --secondary-color: black;
     --background: #24252f;
+    --light-font: rgb(206, 206, 206);
 
     --mid-padding: 1.5rem;
     --more-padding: 1.7rem;
@@ -304,7 +306,7 @@ li>a:hover p {
 }
 
 .trendingItem span p:nth-child(2) {
-    color: rgb(63, 63, 63);
+    color: var(--light-font);
 }
 
 .unFilledIcon {
