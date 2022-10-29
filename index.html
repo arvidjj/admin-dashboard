@@ -8,21 +8,23 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="resources/normalize.css">
     <link rel="stylesheet" href="style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-        rel="stylesheet" />
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0" />
 </head>
 
 <body>
     <div class="grid-container">
         <div class="header">
             <div class="searchBar">
-                <span>glass</span>
-                <input type="text">
+                <span class="material-symbols-outlined">
+                    search
+                    </span>
+                <input type="text" class="searchInput">
             </div>
             <div class="userCorner">
-                <span>bell</span>
+                <span class="material-symbols-outlined">
+                    notifications
+                    </span>
                 <img src="img/avatar.jpeg" alt="User">
                 <p>Angel Ojeda</p>
             </div>
@@ -35,30 +37,82 @@
                 </div>
             </div>
             <div class="adminButtons">
-                <button>New</button>
-                <button>Upload</button>
-                <button>Share</button>
+                <button class="button">New</button>
+                <button class="button">Upload</button>
+                <button class="button">Share</button>
             </div>
         </div>
 
         <div class="side">
             <div class="dashboardDiv">
-                <span>DashboardIcon</span>
+                <span class="material-symbols-outlined" style="font-size:2.5rem;">
+                    dashboard
+                </span>
                 <p>Dashboard</p>
             </div>
             <ul>
-                <li>Home</li>
-                <li>Profile</li>
-                <li>Messages</li>
-                <li>History</li>
-                <li>Tasks</li>
-                <li>Communities</li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">home</span>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">account_circle</span>Profile
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            mode_comment
+                        </span>Messages
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            schedule
+                        </span>History
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            task
+                        </span>Tasks
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            groups
+                        </span>Communities
+                    </a>
+                </li>
             </ul>
 
             <ul>
-                <li>Settings</li>
-                <li>Support</li>
-                <li>Privacy</li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            settings
+                        </span>Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            help_center
+                        </span>Support
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="material-symbols-outlined">
+                            verified_user
+                        </span>Privacy
+                    </a>
+                </li>
             </ul>
         </div>
 
@@ -72,9 +126,15 @@
                         <img src="img/avatar.jpeg" alt="Project">
                         <p>Lorem ipstum asujduasjdusa</p>
                         <div class="projectbuttons">
-                            <buttons>star</buttons>
-                            <buttons>eye</buttons>
-                            <buttons>share</buttons>
+                            <buttons><span class="material-symbols-outlined">
+                                bookmark_add
+                                </span></buttons>
+                            <buttons><span class="material-symbols-outlined">
+                                visibility
+                                </span></buttons>
+                            <buttons><span class="material-symbols-outlined">
+                                share
+                                </span></buttons>
                         </div>
                     </div>
                     <div class="card">
