@@ -26,7 +26,7 @@
 
     --grid-border: 1px solid white;
 }
-#themeButton {
+#themeButton, .normalButton {
     background: none;
     border: none;
 }
@@ -185,7 +185,7 @@ a {
     font-size: 1.5rem;
 }
 
-.side ul li>a:hover {
+li>a:hover p {
     text-decoration: underline;
 }
 
@@ -195,7 +195,7 @@ a {
     grid-row: 2;
 
     display:grid;
-    grid-template-columns: 3fr auto;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap:15px;   
     background-color: var(--background);
@@ -248,12 +248,17 @@ a {
     background: none;
     border: none;
 }
-.projectButtons>button:hover {
+.projectButtons span:hover  {
     text-decoration: underline;
 }
 
+.rightInfo {
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
 .announcements {
-    grid-column: 2;
     padding:50px
 }
 
@@ -269,7 +274,6 @@ a {
 }
 
 .trending {
-    grid-column: 2;
     padding:20px;
     
     justify-self: center;
@@ -285,13 +289,22 @@ a {
 .trendingItem {
     display:flex;
     align-items: center;
-    justify-content: space-between;
+    gap:15px;
 }
 
 .trendingItem img {
     height: 55px;
     width: auto;
     border-radius: 50%;
+}
+
+.trendingItem span {
+    display:flex;
+    flex-direction: column;
+}
+
+.trendingItem span p:nth-child(2) {
+    color: rgb(63, 63, 63);
 }
 
 .unFilledIcon {
@@ -315,17 +328,24 @@ a {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto auto;
     }
+    .rightInfo {
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+    }    
     .projects{
-        grid-row: 1;
-        grid-column: 1;
+        grid-row: 2;
+        grid-column: 1 / 3;
     }
     .announcements {
-        grid-row: 2;
+        grid-row: 1;
         grid-column: 1;
+
+        padding:20px;
     }
     .trending {
-        grid-row: 3;
-        grid-column: 1;
+        grid-row: 1;
+        grid-column: 2;
     }
     .side {
 
